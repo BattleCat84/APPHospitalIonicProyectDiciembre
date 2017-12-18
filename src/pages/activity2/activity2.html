@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hospitales San Jose</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="formgroup" (ngSubmit)="submit()" novalidate>
+    <ion-list> 
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" formControlName="username" placeholder="username"></ion-input> <!--ngControl="username"--> 
+      </ion-item>
+
+      <ion-item *ngIf="formgroup.get('username').errors && formgroup.get('username').dirty">
+        <p *ngIf="formgroup.get('username').hasError('required')">Field is required</p>
+        <p *ngIf="formgroup.get('username').hasError('minlength')">Min of 5 characters</p>
+        <p *ngIf="formgroup.get('username').hasError('maxlength')">Max of 10 characters</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password" placeholder="password" ></ion-input> <!--ngControl="password"-->
+      </ion-item>
+      <ion-item *ngIf="formgroup.get('password').errors && formgroup.get('password').dirty">
+        <p *ngIf="formgroup.get('password').hasError('required')">Field is required</p>
+        <p *ngIf="formgroup.get('password').hasError('minlength')">Min of 5 characters</p>
+        <p *ngIf="formgroup.get('password').hasError('maxlength')">Max of 10 characters</p>
+      </ion-item>
+     </ion-list>
+    <button block ion-button type="submit"  [disabled]="formgroup.invalid">Login</button>
+  </form>
+</ion-content>
+

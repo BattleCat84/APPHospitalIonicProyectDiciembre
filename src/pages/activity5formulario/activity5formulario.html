@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hospitales San Jose</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label>{{username}}</ion-label> 
+  <h2>Introduzca su sexo</h2>
+
+  <!--RadioGroups-->
+  <ion-list radio-group [(ngModel)]="sexo" (ionChange)="actualizarSexo()">
+    <ion-list-header>
+      ¿Cuál es tu Sexo?
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="male"></ion-icon>
+      <ion-label>Hombre</ion-label>
+      <ion-radio checked="true" value="hombre"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="female"></ion-icon>
+      <ion-label>Mujer</ion-label>
+      <ion-radio checked="false" value="mujer"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <!--Checkbox-->
+  <h2>A que especialidad desea asistir</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Cardiologia</ion-label>
+      <ion-checkbox [(ngModel)]="cardiologia" (ionChange)="actualizarCardiologia()">Cardiologia</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Neurocirugia</ion-label>
+      <ion-checkbox [(ngModel)]="neurocirugia" (ionChange)="actualizarNeurocirugia()">Neurocirugia</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cirugia</ion-label>
+      <ion-checkbox [(ngModel)]="cirugia" (ionChange)="actualizarCirugia()">Cirugia</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Radiologia</ion-label>
+      <ion-checkbox [(ngModel)]="radiologia" (ionChange)="actualizarRadiologia()">Radiologia</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nefrología</ion-label>
+      <ion-checkbox [(ngModel)]="nefrologia" (ionChange)="actualizarNefrologia()">Nefrología</ion-checkbox>
+    </ion-item>Nefrología
+  </ion-list>
+
+  <p>
+    <button ion-button color="secondary" (click)="irAOtraPagina()">SIGUIENTE</button>
+  </p>
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-label>Mostrar mensaje</ion-label>
+    <ion-checkbox [(ngModel)]="mostrarMensaje">Mostrar Mensaje</ion-checkbox>
+  </ion-item>
+</ion-footer>

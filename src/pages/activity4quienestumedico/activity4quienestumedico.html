@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hospitales San Jose</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+ <ion-list>
+   <ion-item>
+     <ion-label>Cardiologia</ion-label>
+     <ion-toggle [(ngModel)]="cardiologia" (ionChange)="actualizarCardiologia()"></ion-toggle>
+   </ion-item>
+
+   <ion-item>
+     <ion-label>Neurocirugia</ion-label>
+     <ion-toggle [(ngModel)]="neurocirugia" (ionChange)="actualizarNeurocirugia()"></ion-toggle>
+   </ion-item>
+
+   <ion-item>
+     <ion-label>Cirugia</ion-label>
+     <ion-toggle [(ngModel)]="cirugia" (ionChange)="actualizarCirugia()"></ion-toggle>
+   </ion-item>
+   <ion-item>
+     <ion-label>Radiologia</ion-label>
+     <ion-toggle [(ngModel)]="radiologia" (ionChange)="actualizarRadiologia()"></ion-toggle>
+   </ion-item>
+   <ion-item>
+     <ion-label> Nefrología</ion-label>
+     <ion-toggle [(ngModel)]="nefrologia" (ionChange)="actualizarNefrologia()"></ion-toggle>
+   </ion-item>
+
+   <ion-item *ngFor="let doctor of doctores"> <!--*ngIf="doctor.especialidad">-->
+     
+     <h2>{{doctor.nombre}}</h2>
+     <p>{{doctor.apellidos}}</p>
+   </ion-item>
+ </ion-list>
+</ion-content>
+
+
