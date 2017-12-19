@@ -9,8 +9,10 @@
 
 
 <ion-content padding>
-
   <img src="../assets/imgs/logohospitalsanjose.png" />
+
+  <h1>Welcome {{username}}</h1>
+  <button ion-button full color="primary" style="margin-top: 20px;" (click)="logout()">Logout</button>
 
   <p>
     <button ion-button color="secondary" (click)="irATuMedico()">¿Quíen es tu médico?</button>

@@ -7,6 +7,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Activity1Page } from "../pages/activity1/activity1";
+import { Activity2Page } from "../pages/activity2/activity2";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage = Activity1Page;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(
     public platform: Platform,
@@ -33,6 +34,14 @@ export class MyApp {
       { title: 'My First List', component: ListPage }
     ];
   }
+
+  checkPreviousAuthorization(): void {
+    if ((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
+      (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {  
+    } else {
+      this.rootPage = Activity1Page;
+    }
+  }  
 
   initializeApp() {
     this.platform.ready().then(() => {

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { NavController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { Activity3Page } from "../activity3/activity3";
 
 
@@ -15,7 +15,7 @@ export class Activity2Page {
   formgroup: FormGroup;
 
   constructor(public navCtrl: NavController, public formbuilder: FormBuilder) {
-
+    
 
     this.formgroup = this.formbuilder.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
@@ -25,9 +25,13 @@ export class Activity2Page {
   }
 
  
-  submit(): void {
-    alert(JSON.stringify(this.formgroup.value));
-    this.navCtrl.push(Activity3Page);  
+  submit(value: any): void {
+    //alert(JSON.stringify(this.formgroup.value));
+    if (this.formgroup.valid) {
+      window.localStorage.setItem('username', value.username);
+      window.localStorage.setItem('password', value.password);
+      this.navCtrl.push(Activity3Page);
+    }
   }
 }
 

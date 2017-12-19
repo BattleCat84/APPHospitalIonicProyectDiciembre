@@ -9,7 +9,7 @@
 
 <ion-content padding>
 
-  <form [formGroup]="formgroup" (ngSubmit)="submit()" novalidate>
+  <form [formGroup]="formgroup" (ngSubmit)="submit(formgroup.value)" novalidate>
     <ion-list> 
       <ion-item>
         <ion-label floating>Username</ion-label>
