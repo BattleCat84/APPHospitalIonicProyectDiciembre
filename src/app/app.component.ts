@@ -8,23 +8,26 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Activity1Page } from "../pages/activity1/activity1";
 import { Activity2Page } from "../pages/activity2/activity2";
-
+import { Activity3Page } from "../pages/activity3/activity3";
+import { ActivityAdminPage } from '../pages/activityadmin/activityadmin';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  navCtrl: any;
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
   rootPage = Activity1Page;
+
   pages: Array<{ title: string, component: any }>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
   ) {
     this.initializeApp();
 
@@ -36,12 +39,16 @@ export class MyApp {
   }
 
   checkPreviousAuthorization(): void {
-    if ((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
-      (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {  
+    if ((window.localStorage.getItem('username') == "miguel") &&
+      (window.localStorage.getItem('password') == "12345")) {
+      this.navCtrl = Activity2Page;
     } else {
-      this.rootPage = Activity1Page;
+      ((window.localStorage.getItem('username') == "admin") &&
+        (window.localStorage.getItem('password') == "12345")) 
+        this.navCtrl = ActivityAdminPage;
     }
-  }  
+  }
+  
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -49,6 +56,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.checkPreviousAuthorization();
     });
   }
 
