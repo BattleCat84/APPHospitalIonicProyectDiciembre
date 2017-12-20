@@ -33,13 +33,13 @@
       <ion-item *ngIf="myForm.get('apellido2').errors && myForm.get('apellido2').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('apellido2').hasError('apellido2')">Campo obligatorio</p>
       </ion-item>
-      <ion-item>
-        <ion-label stacked>Años trabajados:</ion-label>
-        <ion-input formControlName="iosTrabajados" type="number" placeholder="iosTrabajados"></ion-input>
+     <!-- <ion-item>
+       <ion-label stacked>Años trabajados:</ion-label>
+        <ion-input formControlName="aiosTrabajados" type="text" placeholder="aiosTrabajados"></ion-input>
       </ion-item>
-      <ion-item *ngIf="myForm.get('iosTrabajados').errors && myForm.get('iosTrabajados').dirty">
-        <p color="danger" ion-text *ngIf="myForm.get('iosTrabajados').hasError('iosTrabajados)">Campo obligatorio</p>
-      </ion-item>
+      <ion-item *ngIf="myForm.get('aiosTrabajados').errors && myForm.get('aiosTrabajados').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('aiosTrabajados').hasError('aiosTrabajados)">Campo obligatorio</p>
+      </ion-item> -->
     </ion-list>
     <div padding>
       <button ion-button block type="submit" [disabled]="myForm.invalid">Guardar</button>
