@@ -2,12 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\icon",
-    "\\src\\assets\\imgs",
+    "\\src\\app",
     "\\src\\pages",
-    "\\src\\pages\\activity5formulario"
+    "\\src\\providers",
+    "\\src\\providers\\user-service"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\providers\\user-service\\user-service.ts",
   "PreviewInSolutionExplorer": false
 }

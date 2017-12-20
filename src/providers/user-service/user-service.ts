@@ -18,8 +18,14 @@ export class UserServiceProvider {
     console.log("servicio");
     return this.http.get("http://localhost:8080/Hospitalsanjosevp3Maven-1.0-SNAPSHOT/webresources/org.hospitalsanjose.hospitalsanjosevp3maven.doctor");
   }
-
-  postDoctores() {
-    return this.http.get("http://localhost:8080/Hospitalsanjosevp3Maven-1.0-SNAPSHOT/webresources/org.hospitalsanjose.hospitalsanjosevp3maven.doctor");
+  //realiza un nuevo registro en la base de datos
+  postDoctores(doctores) {
+    console.log("servicio");
+    return this.http.post("http://localhost:8080/Hospitalsanjosevp3Maven-1.0-SNAPSHOT/webresources/org.hospitalsanjose.hospitalsanjosevp3maven.doctor",
+      doctores,
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
   }
 }

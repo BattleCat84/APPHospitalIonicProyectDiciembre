@@ -11,7 +11,7 @@ import { Activity3Page } from '../pages/activity3/activity3';
 import { Activity4QuienEsTuMedicoPage } from '../pages/activity4quienestumedico/activity4quienestumedico';
 import { Activity5FormularioPage } from '../pages/activity5formulario/activity5formulario';
 import { Activity6PedirCitaPage } from '../pages/activity6pedircita/activity6pedircita';
-import { ActivityAdminPage } from '../pages/activityadmin/activityadmin';
+import { ActivityAdminPostPage } from '../pages/activityadminpost/activityadminpost';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgCalendarModule } from 'ionic2-calendar';
@@ -31,7 +31,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     Activity4QuienEsTuMedicoPage,
     Activity5FormularioPage,
     Activity6PedirCitaPage,
-    ActivityAdminPage
+    ActivityAdminPostPage
  
   ],
   imports: [
@@ -52,7 +52,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     Activity4QuienEsTuMedicoPage,
     Activity5FormularioPage,
     Activity6PedirCitaPage,
-    ActivityAdminPage 
+    ActivityAdminPostPage
   ],
   providers: [
     StatusBar,

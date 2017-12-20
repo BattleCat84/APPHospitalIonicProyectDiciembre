@@ -9,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Activity1Page } from "../pages/activity1/activity1";
 import { Activity2Page } from "../pages/activity2/activity2";
 import { Activity3Page } from "../pages/activity3/activity3";
-import { ActivityAdminPage } from '../pages/activityadmin/activityadmin';
+import { ActivityAdminPostPage } from '../pages/activityadminpost/activityadminpost';
 
 @Component({
   templateUrl: 'app.html'
@@ -45,7 +45,7 @@ export class MyApp {
     } else {
       ((window.localStorage.getItem('username') == "admin") &&
         (window.localStorage.getItem('password') == "12345")) 
-        this.navCtrl = ActivityAdminPage;
+      this.navCtrl = ActivityAdminPostPage;
     }
   }
   
