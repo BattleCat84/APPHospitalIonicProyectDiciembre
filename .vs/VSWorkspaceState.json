@@ -3,12 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\assets",
     "\\src\\pages",
-    "\\src\\pages\\activity4quienestumedico",
     "\\src\\providers",
-    "\\src\\providers\\user-service",
-    "\\src\\theme"
+    "\\src\\providers\\user-service"
   ],
   "SelectedNode": "\\src\\providers\\user-service\\user-service.ts",
   "PreviewInSolutionExplorer": false

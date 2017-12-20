@@ -9,7 +9,7 @@
 
 <ion-content padding>
 
-  <form [formGroup]="formgroup" (ngSubmit)="submit()" novalidate>
+  <form [formGroup]="formgroup" (ngSubmit)="submit(formgroup.value)" novalidate>
     <ion-list> 
       <ion-item>
         <ion-label floating>Username</ion-label>
@@ -34,5 +34,7 @@
      </ion-list>
     <button block ion-button type="submit"  [disabled]="formgroup.invalid">Login</button>
   </form>
+
+  <button ion-button color="secundary" (click)="irAOtraPagina()">Admin</button>
 </ion-content>
 

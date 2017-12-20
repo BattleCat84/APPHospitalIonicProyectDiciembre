@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hospitales San Jose</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="myForm" (ngSubmit)="postDoctores()" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Añadir Doctor</ion-label>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="nombre" type="text" placeholder="nombre"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('nombre').errors && myForm.get('nombre').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('nombre').hasError('required')">Campo obligatorio</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Apellido1:</ion-label>
+        <ion-input formControlName="apellido1" type="text" placeholder="apellido1"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('apellido1').errors && myForm.get('apellido1').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('apellido1').hasError('apellido1')">Campo obligatorio</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Apellido2:</ion-label>
+        <ion-input formControlName="apellido2" type="text" placeholder="apellido2"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('apellido2').errors && myForm.get('apellido2').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('apellido2').hasError('apellido2')">Campo obligatorio</p>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Años trabajados:</ion-label>
+        <ion-input formControlName="iosTrabajados" type="number" placeholder="iosTrabajados"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm.get('iosTrabajados').errors && myForm.get('iosTrabajados').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('iosTrabajados').hasError('iosTrabajados)">Campo obligatorio</p>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="myForm.invalid">Guardar</button>
+    </div>
+  </form>
+</ion-content>
