@@ -25,14 +25,14 @@ export class ActivityAdminPostPage {
   }
 
   postStudent() {
-    var student = {
+    var doctores = {
       nombre: this.myForm.get('nombre').value,
       apellido1: this.myForm.get('apellido1').value,
       apellido2: this.myForm.get('apellido2').value,
       aiosTrabajados: this.myForm.get('aiosTrabajados').value  
     }
 
-    this.service.postDoctores().subscribe(
+    this.service.postDoctores(doctores).subscribe(
       (data) => {
         //Aquí deberías mostrar una ventana modal que dijera que se ha guardado la información
         let dataModal = this.modalCtrl.create(data);
